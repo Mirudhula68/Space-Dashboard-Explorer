@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7f9;
+  color: #2c3e50;
+}
+
+.navbar {
+  background: #2c3e50;
+  padding: 10px 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #1abc9c;
+}
+
+.app-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.about-page {
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #241c1c;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 800px;
+}
+
+.about-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #140c32; 
+}
+
+.about-page p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.planet-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.planet-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 220px;
+  padding: 15px;
+  text-align: center;
+}
+
+.planet-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.planet-card h2 {
+  color: #1abc9c;
+}
+
+.mission-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.mission-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 250px;
+  transition: transform 0.2s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+}
+
+.mission-card h2 {
+  margin: 0 0 10px;
+  color: #1abc9c;
+}
+
+.search-bar {
+  padding: 10px;
+  width: 250px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.loader {
+  font-size: 1.5rem;
+  color: #1abc9c;
+  margin-top: 50px;
+}
