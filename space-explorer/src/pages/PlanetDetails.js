@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { useParams, Link } from "react-router-dom";
 const planets = [
   { id: 1, name: "Mercury", img: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg", desc: "The smallest planet in our solar system and closest to the Sun.", size: "4,879 km diameter", moons: "0" },
   { id: 2, name: "Venus", img: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg", desc: "A hot, cloudy planet often called Earth's twin.", size: "12,104 km diameter", moons: "0" },
@@ -11,22 +10,19 @@ const planets = [
   { id: 7, name: "Uranus", img: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg", desc: "An ice giant with a tilted rotation axis.", size: "50,724 km diameter", moons: "27" },
   { id: 8, name: "Neptune", img: "https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg", desc: "A deep blue planet with supersonic winds.", size: "49,244 km diameter", moons: "14" }
 ];
-
-const Dashboard = () => {
+const PlanetDetails = () => {
+  const { id } = useParams();
+  const planet = planets.find((p) => p.id === parseInt(id));
+  if (!planet) return <p>Planet not found.</p>;
   return (
     <div className="app-container">
-      <h1>🪐 Planets of Our Solar System</h1>
-      <div className="planet-list">
-        {planets.map((planet) => (
-          <div key={planet.id} className="planet-card">
-            <img src={planet.img} alt={planet.name} />
-            <h2>{planet.name}</h2>
-            <Link to={`/planets/${planet.id}`}>View Details</Link>
-          </div>
-        ))}
-      </div>
+      <h1>{planet.name}</h1>
+      <img src={planet.img} alt={planet.name} className="planet-image" />
+      <p><strong>Description:</strong> {planet.desc}</p>
+      <p><strong>Size:</strong> {planet.size}</p>
+      <p><strong>Moons:</strong> {planet.moons}</p>
+      <Link to="/dashboard">← Back to Planets</Link>
     </div>
   );
 };
-
-export default Dashboard;
+export default PlanetDetails;
